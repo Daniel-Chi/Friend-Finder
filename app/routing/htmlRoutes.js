@@ -1,17 +1,13 @@
-module.exports = (function(){
-    "use strict";
-    var express = require("express");
-    var htmlRoutes = express.Router();
+//pass in app into exported function
+module.exports = function(app, home, survey){
 
     //default path to home
-    htmlRoutes.get("/", function (req, res) {
-        res.send("<h1>Hello?</h1>");
+    app.get("/", function (req, res) {
+        res.sendFile(home);
     });
     
     //path to survey page
-    htmlRoutes.get("/survey", function (req, res) {
-        res.send("<h1>Hello?</h1>");
+    app.get("/survey", function (req, res) {
+        res.sendFile(survey);
     });
-
-    return htmlRoutes;
-})();
+}
