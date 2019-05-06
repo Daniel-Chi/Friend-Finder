@@ -7,12 +7,12 @@ app.use(express.json());
 
 //default path to home
 app.get("/", function (req, res) {
-    res.send("Hello World");
+    res.send(path);
 });
 
 //path to survey page
 app.get("/survey", function (req, res) {
-    res.sendFile("../public/survey.html");
+    res.send(path);
 });
 
 //server listener
