@@ -7,7 +7,7 @@ app.use(express.json());
 
 //default path to home
 app.get("/", function (req, res) {
-    res.sendfile("../public/home.html");
+    res.send("Hello World");
 });
 
 //path to survey page
