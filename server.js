@@ -7,6 +7,8 @@ const apiRouter = require("./app/routing/apiRoutes");
 
 //create server instance
 const app = express();
+//add data-parsing middleware for post requests
+app.use(express.json());
 
 //create path strings
 const homePath = path.join(__dirname, "app", "public", "home.html");

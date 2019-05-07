@@ -181,12 +181,13 @@
                 const score = $("#q" + String(i)).val();
                 inputScores.push(parseInt(score));
             };
-            const surveyData = {
+            let surveyData = {
                 name: inputName,
                 photo: inputPhoto,
                 scores: inputScores,
             }
-            $.post("/api/friends", surveyData).then(function (res) {
+            console.log(surveyData)
+            $.post("/api/friends", surveyData, function (res) {
                 console.log(res)
                 //edit modal to display suggested friend
                 $(".modal-title").text(res.name);
