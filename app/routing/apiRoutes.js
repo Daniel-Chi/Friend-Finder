@@ -12,12 +12,14 @@ const apiRouter = function (app) {
 
     //path to survey page
     app.post("/api/friends", function (req, res) {
+        //basic input validation to check if already existing
+        for (i=0;i<friendsData.length;i++){
+            if (friendsData[i].name===req.body.name){
+                return res.send({name: "You are already in the database"});
+            };
+        };
         //parse request data
-        const name = req.body.name;
-        const photo = req.body.photo;
         const scores = req.body.scores;
-        const newUser = new database.User(name, photo, scores);
-        console.log(newUser)
         //perform calculation to search for user with least difference in scores
         //initialize array to store difference in score for each possible friend from all users
         let scoreDifferences = [];
@@ -35,7 +37,7 @@ const apiRouter = function (app) {
         const friendIndex = scoreDifferences.indexOf(Math.min.apply(Math, scoreDifferences))
         const newFriend = friendsData[friendIndex];
         //add new user object to the array of all users
-        friendsData.push(newUser);
+        friendsData.push(req.body);
         //send response for post request
         res.send(newFriend)
     });

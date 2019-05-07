@@ -1,13 +1,15 @@
 //npm install express before running
 const express = require("express");
 const path = require("path");
+
 //import external routing functions from htmlRoutes.js and apiRoutes.js
 const htmlRouter = require("./app/routing/htmlRoutes");
 const apiRouter = require("./app/routing/apiRoutes");
 
 //create server instance
-const app = express();
+let app = express();
 //add data-parsing middleware for post requests
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //create path strings
