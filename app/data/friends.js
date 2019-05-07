@@ -2,7 +2,7 @@
 function User(name, photoURL, scoresArray) {
     this.name = name;
     this.photo = photoURL;
-    this.scores = scoresArray
+    this.scores = scoresArray;
 };
 //Mock starter values to initialize array
 let usersArray = [];

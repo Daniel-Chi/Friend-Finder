@@ -25,7 +25,7 @@
         <div class="form-group">
             <h3><strong>Question 1</strong></h3>
             <label for="q1">You enjoy nature and the outdoors.</label>
-            <select class="form-control" id="q1">
+            <select class="form-control" id="q1" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -36,7 +36,7 @@
         <div class="form-group">
             <h3><strong>Question 2</strong></h3>
             <label for="q2">You are known for a strong wit and a sharp tongue.</label>
-            <select class="form-control" id="q2">
+            <select class="form-control" id="q2" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -47,7 +47,7 @@
         <div class="form-group">
             <h3><strong>Question 3</strong></h3>
             <label for="q3">You are neat and organized.</label>
-            <select class="form-control" id="q3">
+            <select class="form-control" id="q3" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -58,7 +58,7 @@
         <div class="form-group">
             <h3><strong>Question 4</strong></h3>
             <label for="q4">You don't care about what others say about you.</label>
-            <select class="form-control" id="q4">
+            <select class="form-control" id="q4" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -69,7 +69,7 @@
         <div class="form-group">
             <h3><strong>Question 5</strong></h3>
             <label for="q5">You can keep a level head even in stressful situations.</label>
-            <select class="form-control" id="q5">
+            <select class="form-control" id="q5" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -80,7 +80,7 @@
         <div class="form-group">
             <h3><strong>Question 6</strong></h3>
             <label for="q6">You prefer having only a few close friends.</label>
-            <select class="form-control" id="q6">
+            <select class="form-control" id="q6" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -91,7 +91,7 @@
         <div class="form-group">
             <h3><strong>Question 7</strong></h3>
             <label for="q7">You would rather play sports than watch them.</label>
-            <select class="form-control" id="q7">
+            <select class="form-control" id="q7" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -102,7 +102,7 @@
         <div class="form-group">
             <h3><strong>Question 8</strong></h3>
             <label for="q8">You often let you emotions guide your actions.</label>
-            <select class="form-control" id="q8">
+            <select class="form-control" id="q8" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -113,7 +113,7 @@
         <div class="form-group">
             <h3><strong>Question 9</strong></h3>
             <label for="q9">You are very observant of your surroundings and the people around you.</label>
-            <select class="form-control" id="q9">
+            <select class="form-control" id="q9" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -124,7 +124,7 @@
         <div class="form-group">
             <h3><strong>Question 10</strong></h3>
             <label for="q10">You have a hard time being honest with yourself.</label>
-            <select class="form-control" id="q10">
+            <select class="form-control" id="q10" style="width: 150px;">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -132,16 +132,35 @@
                 <option>5</option>
             </select>
         </div>
+        <button type="submit" class="btn btn-primary btn-lg" id="submit" data-toggle="modal"
+            data-target="#newFriendModal">Submit</button>
 
+        <div id="newFriendModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Suggested Friend</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Photo not found</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
         <footer>
             <a href="/api/friends">API Friends List</a> | <a href="https://github.com/Daniel-Chi/Friend-Finder">GitHub
                 Repo</a>
         </footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -149,7 +168,31 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
-    //code here
+        //submit button listener
+        $("#submit").on("click", function () {
+            event.preventDefault();
+            //retrieve form input values
+            const inputName = $("#name").val().trim();
+            const inputPhoto = $("#photo").val().trim();
+            //initialize scores array
+            let inputScores = [];
+            //push each answer value into scores array
+            for (i = 1; i < 11; i++) {
+                const score = $("#q" + String(i)).val();
+                inputScores.push(parseInt(score));
+            };
+            const surveyData = {
+                name: inputName,
+                photo: inputPhoto,
+                scores: inputScores,
+            }
+            $.post("/api/friends", surveyData).then(function (res) {
+                console.log(res)
+                //edit modal to display suggested friend
+                $(".modal-title").text(res.name);
+                $(".modal-body").html("<img src='" + res.photo + "'>");
+            });
+        });
     </script>
 </body>
 

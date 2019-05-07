@@ -12,16 +12,17 @@ const apiRouter = function (app) {
     //path to survey page
     app.post("/api/friends", function (req, res) {
         //parse request data
+        console.log(req)
         const newUser = new User(name, photo, scores);
+        console.log(newUser)
         //calculate user with the most similar answers, store as an index (initial value -1)
         let friendIndex = -1;
         calculateFriend(newUser);
         newFriend = friendsData[friendIndex];
-        //add new user object to the array
+        //add new user object to the array of all users
         friendsData.push(newUser);
-        //edit modal to display suggested friend
-        $(".modal-title").text(newFriend.name);
-        $(".modal-body").html("<img src='"+newFriend.photo+"'>");
+        //send response for post request
+        res.send(newFriend)
     });
 
     //function for calculating user with most similar answers
