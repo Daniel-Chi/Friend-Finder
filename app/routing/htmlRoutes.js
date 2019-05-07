@@ -1,5 +1,5 @@
-//pass in app into exported function
-module.exports = function(app, home, survey){
+//create html routing functions
+const htmlRouter = function(app, home, survey){
 
     //default path to home
     app.get("/", function (req, res) {
@@ -10,4 +10,8 @@ module.exports = function(app, home, survey){
     app.get("/survey", function (req, res) {
         res.sendFile(survey);
     });
-}
+};
+//export functions
+module.exports = {
+    htmlRouter: htmlRouter
+};
